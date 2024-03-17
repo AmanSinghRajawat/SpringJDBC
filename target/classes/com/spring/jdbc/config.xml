@@ -14,12 +14,16 @@
 </bean>
 
 <!-- 
-    we need JdbcTemplate Class object -> 
-    JdbcTemplate Class need DataSource Interface Object [we can not create object of Interface, So DriverManagerDataSource is an Implementation class of DataSource Interface.]  ->
-    Now we will create DriverManagerDataSource Class Object & give that Object to JdbcTemplate Class Object
+    We need JdbcTemplate Class object to fire Queries
+    -> JdbcTemplate Class Object need DataSource Interface Object [we can not create object of Interface, So DriverManagerDataSource is an Implementation class of DataSource Interface.]
+    -> Now we will create DriverManagerDataSource Class Object & give that Object to JdbcTemplate Class Object
 -->
 
 <bean class = "org.springframework.jdbc.core.JdbcTemplate" name ="jdbcTemp" p:dataSource-ref="databaseConfigurationObject"/>
 
+
+<bean class="com.spring.jdbc.dao.StudentDaoImpl" name="studentDao"> 
+	<property name="jdbcTemplate" ref="jdbcTemp"/>
+</bean>
 
 </beans>
