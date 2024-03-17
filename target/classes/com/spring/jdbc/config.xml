@@ -14,7 +14,9 @@
 </bean>
 
 <!-- 
-    we need JdbcTemplate Class object -> JdbcTemplate Class need DataSource Interface Object [we can not create object of Interface, So DriverManagerDataSource is an Implementation class of DataSource Interface.]  -> Now we will create DriverManagerDataSource Class Object in JdbcTemplate Class 
+    we need JdbcTemplate Class object -> 
+    JdbcTemplate Class need DataSource Interface Object [we can not create object of Interface, So DriverManagerDataSource is an Implementation class of DataSource Interface.]  ->
+    Now we will create DriverManagerDataSource Class Object in JdbcTemplate Class 
 -->
 
 <bean class = "org.springframework.jdbc.core.JdbcTemplate" name ="jdbcTemp" p:dataSource-ref="databaseConfigurationObject"/>
