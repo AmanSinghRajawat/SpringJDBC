@@ -43,15 +43,31 @@ public class App
         
         StudentDao studentDao = context.getBean("studentDao", StudentDao.class);
         
-        Student student = new Student();
         
-        student.setRollNo(999);
-        student.setName("Satyam");
-        student.setCity("Noida");
+//        Add Student Record
         
-        int result = studentDao.insert(student);
-        System.out.println("Result updated : "+result);
+//        Student student = new Student();
+//        
+//        student.setRollNo(191);
+//        student.setName("John");
+//        student.setCity("America");
+//        
+//        int result = studentDao.insert(student);
+//        System.out.println("Record Added : "+result);
+//        
+
         
+        
+//        Update Student Record
+        
+        Student updateStudent = new Student();
+        
+        updateStudent.setRollNo(999);
+        updateStudent.setCity("Ajmer");
+        updateStudent.setName("Gullu");
+        
+        int update = studentDao.update(updateStudent);
+        System.out.println("Record "+updateStudent.getRollNo()+" updated : "+update);
         
     }
 }
