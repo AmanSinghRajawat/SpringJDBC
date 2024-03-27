@@ -58,6 +58,11 @@
 		</dependency>
 
 
+		<dependency>
+			<groupId>com.student</groupId>
+			<artifactId>StudentMgmt</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 	</dependencies>
 
 </project>
