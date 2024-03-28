@@ -3,24 +3,18 @@ package com.spring.jdbc;
 import java.util.List;
 
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import com.spring.jdbc.dao.StudentDao;
 import com.spring.jdbc.entities.Student;
 
-/**
- * Hello world!
- *
- */
+//Run this App as Java Application.
+
 public class App {
 	public static void main(String[] args) {
 
-		// Run this App as Java Application.
-
-		System.out.println("Hello World!");
-
 		// spring jdbc => JdbcTemplate Object
-		ApplicationContext context = new ClassPathXmlApplicationContext("com/spring/jdbc/config.xml");
+		ApplicationContext context = new AnnotationConfigApplicationContext(JavaConfig.class);
 
 //        JdbcTemplate jdbc = context.getBean("jdbcTemp", JdbcTemplate.class);
 //        
@@ -41,14 +35,14 @@ public class App {
 
 //        Add Student Record
 
-//        Student student = new Student();
-//        
-//        student.setRollNo(191);
-//        student.setName("John");
-//        student.setCity("America");
-//        
-//        int result = studentDao.insert(student);
-//        System.out.println("Record Added : "+result);
+//		Student student = new Student();
+//
+//		student.setRollNo(786);
+//		student.setName("Serul");
+//		student.setCity("Mansoori");
+//
+//		int result = studentDao.insert(student);
+//		System.out.println("Record Added : " + result);
 //        
 
 //        Update Student Record
@@ -70,14 +64,18 @@ public class App {
 
 		// get Student by ID
 
-//		Student student = studentDao.getStudentById(888);
-//		System.out.println("get student by ID : " + student);
-//		
+//		Student getStudentById = studentDao.getStudentById(888);
+//		System.out.println("get student by ID : " + getStudentById);
 
 		// get All the Students
 
-		List<Student> student = studentDao.getAllStudent();
-		System.out.println("All Students : " + student);
+		List<Student> students = studentDao.getAllStudent();
+
+//		System.out.println("All Students : " + student);
+
+		for (Student std : students) {
+			System.out.println(std);
+		}
 
 	}
 }

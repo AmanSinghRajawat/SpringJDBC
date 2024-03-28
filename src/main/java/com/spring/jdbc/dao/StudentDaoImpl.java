@@ -35,7 +35,7 @@ public class StudentDaoImpl implements StudentDao {
 		return delete;
 	}
 
-	// get Student by ID, Select Single Student by ID
+	// get Student by ID, Select Single Student by ID, We need RowMapper for select query.
 
 	// RowMapper converts result set into Objects.
 
@@ -46,8 +46,7 @@ public class StudentDaoImpl implements StudentDao {
 		return student;
 	}
 
-	// RowMapper using Anonymous class, Not Recommended, Because every time you have
-	// to implement this.
+	// RowMapper using Anonymous class, Not Recommended, Because every time you have to implement 'mapRow' method.
 
 //	public Student getStudentById(long rollNo) {
 //		String query = "select * from student where rollNo=?";
